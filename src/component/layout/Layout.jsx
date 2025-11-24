@@ -5,9 +5,12 @@ import PropTypes from "prop-types";
 
 function Layout({children}) {
   return (
-    <div className='relative flex flex-col items-center justify-start w-screen h-screen '>
+    <div className='relative flex flex-col items-center justify-start w-screen min-h-screen '>
         <Header />
-        {children}
+        <main className="flex flex-col items-center flex-1 w-full">
+           {children}
+        </main>
+       
         <Footer />
     </div>
   )

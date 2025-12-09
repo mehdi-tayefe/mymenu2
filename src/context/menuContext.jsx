@@ -19,6 +19,7 @@ export function MenuContextProvider ({children}) {
 
     return <menuContext.Provider value={{
         catName,
+        setCatName
     }} >
         {children}
     </menuContext.Provider>

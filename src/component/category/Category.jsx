@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import CategoryItem from './CategoryItem'
 import Shake from "../../assets/category/soda.png"
 import cocktail from "../../assets/category/cocktail.png"
@@ -7,8 +7,14 @@ import Beer from "../../assets/category/cheers.png"
 import Cocoa from "../../assets/category/coconut.png"
 import Punch from "../../assets/category/juice.png"
 import Other from "../../assets/category/mocktail.png"
+import { menuContext } from '../../context/MenuContext'
+
+
+
 
 function Category() {
+
+  const {setCatName , catName} = useContext(menuContext)
 
   const catDrinks = [
     { name: "Shake", img: Shake },
@@ -23,7 +29,14 @@ function Category() {
   return (
     <div className='flex items-center justify-start w-full h-40 gap-2 overflow-x-auto scrollbar-hidden whitespace-nowrap bg-gray-500 pl-2 shadow-lg  static top-0'>
       {catDrinks.map((item, index) => (
-        <CategoryItem key={index} catImg={item.img} name={item.name} />
+        <CategoryItem key={index} 
+        catImg={item.img}
+        name={item.name}
+        onClick ={ () =>{
+          setCatName(item.name)
+          
+          
+        }} />
       ))}
 
     </div>

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, } from 'react'
 import Shake from './Shake'
 import Cocktail from './Cocktail'
 import Beer from './Beer'
@@ -13,6 +13,7 @@ function CardContainer() {
 
   const { catName } = useContext(menuContext);
 
+
   const renderComponent = () => {
     switch (catName) {
       case "Shake": return <Shake />
@@ -25,6 +26,9 @@ function CardContainer() {
       default: return <Shake />;
     }
   }
+  useEffect(() => {
+
+  })
 
   return (
 

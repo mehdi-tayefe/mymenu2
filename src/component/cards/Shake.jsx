@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import CardsItem from "./CardsItem"
 import { getProducts } from '../../services/api';
+import Loading from '../Loading/Loading';
 
 function Shake() {
     const [products, setProducts] = useState([])
     const fetched = useRef(false);
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         if (fetched.current) return;
@@ -14,10 +16,11 @@ function Shake() {
             try{
                 const result = await getProducts("Shake")
                 setProducts(result.drinks)
-                
+                setLoading(false)
             }
             catch(error){
                 console.error("Error fetching products:", error);
+                setLoading(false)
             }
         };
         
@@ -26,6 +29,8 @@ function Shake() {
     },[])
   
     return (
+        loading ? (<Loading />) :
+        (
         <div className='w-full h-max flex flex-col justify-start items-start gap-2  '>
             <div className='w-full h-10 border-b-4 flex justify-center items-center shadow border-black mb-4'>
                 <div className='text-center font-bold'>Shake</div>
@@ -36,7 +41,7 @@ function Shake() {
                 ))
             }
 
-        </div>
+        </div>)
     )
 }
 

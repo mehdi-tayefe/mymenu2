@@ -2,7 +2,7 @@ import React from 'react'
 
 function CardsItem({name , img}) {
   return (
-    <div className='w-full h-20 flex justify-start items-start border-b border-gray-400 bg-purple-300 shadow-sm'>
+    <div className='w-full h-20 flex justify-start items-start border-b border-gray-400 bg-orange-200 shadow-sm'>
       <div className='w-1/4 h-[90%] self-center pl-2 '>
         <div className='w-full h-full border flex items-center justify-center'>
           <img className='w-full h-full' src={img} alt='drink' />

@@ -11,3 +11,9 @@ export async function getProducts(category){
     const {data} =await products.get(`/filter.php?c=${category}`)
     return data
 }
+
+
+export async function getProduct(id){
+    const{data} = await products.get(`/lookup.php?iid=${id}`)
+    return data
+}

@@ -38,7 +38,7 @@ function Shot() {
             </div>
             {
                 products.slice(0 ,6).map((item)=>(
-                        <CardsItem key={item.idDrink} name = {item.strDrink}  img={item.strDrinkThumb}/>
+                        <CardsItem key={item.idDrink}  id={item.idDrink} name = {item.strDrink}  img={item.strDrinkThumb}/>
                 ))
             }
 

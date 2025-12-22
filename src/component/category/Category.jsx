@@ -27,7 +27,7 @@ function Category() {
   ];
 
   return (
-    <div className='flex items-center justify-start w-full h-40 gap-2 overflow-x-auto scrollbar-hidden whitespace-nowrap bg-gray-500 pl-2 shadow-lg  static top-0 md:justify-evenly'>
+    <div className='flex items-center justify-start w-full h-40 gap-2 overflow-x-auto scrollbar-hidden whitespace-nowrap bg-gray-500 pl-2 shadow-lg  static top-0 md:justify-evenly md:px-32'>
       {catDrinks.map((item, index) => (
         <CategoryItem key={index} 
         catImg={item.img}

@@ -13,7 +13,7 @@ function Modal({ isOpen, onClose, children }) {
         onClick={(e) => e.stopPropagation()}
         className="w-[80vw] h-[80vh] bg-zinc-900 rounded-2xl p-6 relative flex flex-col justify-start items-center"
       >
-        <div className="w-full h-1/3 flex justify-center items-center">
+        <div className="w-full h-1/3 flex justify-center items-center md:w-[60%] md:h-2/3">
           <img className="w-full h-full" src={coffee} alt="drink" />
         </div>
         <div className="w-full h-1/4 mt-12 text-center font-bold text-2xl text-white">

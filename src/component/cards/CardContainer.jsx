@@ -32,7 +32,7 @@ function CardContainer() {
 
   return (
 
-    <div className='w-full h-max flex flex-col justify-start items-start gap-2 bg-stone-400 pb-2 '>
+    <div className='w-full h-max flex flex-col justify-start items-start gap-2 bg-stone-400 pb-2'>
       {
         renderComponent()
       }

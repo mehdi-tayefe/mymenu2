@@ -54,7 +54,7 @@ function Punch() {
     return (
         loading ? (<Loading />) :
             (
-                <div className='w-full h-max flex flex-col justify-start items-start gap-2  '>
+                <div className='w-full h-max flex flex-col justify-start items-start gap-2 md:items-center '>
                     <div className='w-full h-10 border-b-4 flex justify-center items-center shadow border-black mb-4'>
                         <div className='text-center font-bold'>Punch</div>
                     </div>

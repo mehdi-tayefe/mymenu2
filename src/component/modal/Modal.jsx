@@ -1,4 +1,5 @@
 import React from "react";
+import coffee from "../../assets/modal/coffee.jfif"
 
 function Modal({ isOpen, onClose, children }) {
   if (!isOpen) return null;
@@ -10,8 +11,17 @@ function Modal({ isOpen, onClose, children }) {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-[80vw] h-[80vh] bg-zinc-900 rounded-2xl p-6 relative"
+        className="w-[80vw] h-[80vh] bg-zinc-900 rounded-2xl p-6 relative flex flex-col justify-start items-center"
       >
+        <div className="w-full h-1/3 flex justify-center items-center">
+          <img className="w-full h-full" src={coffee} alt="drink" />
+        </div>
+        <div className="w-full h-1/4 mt-12 text-center font-bold text-2xl text-white">
+          Drinks name
+        </div>
+        <div className="w-full h/1/3 text-center text-xl text-white">
+          this paragraph is a short explain about the drink
+        </div>
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-red-700  text-4xl"

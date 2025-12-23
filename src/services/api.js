@@ -14,6 +14,7 @@ export async function getProducts(category){
 
 
 export async function getProduct(id){
-    const{data} = await products.get(`/lookup.php?iid=${id}`)
+    const{data} = await products.get(`/lookup.php?i=${id}`)
     return data
 }
+//https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=17227

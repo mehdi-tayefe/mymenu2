@@ -1,7 +1,8 @@
 import React from "react";
 import coffee from "../../assets/modal/coffee.jfif"
+import { getDefaultNormalizer } from "@testing-library/dom";
 
-function Modal({ isOpen, onClose, children }) {
+function Modal({ isOpen, onClose, children, name ,description , img}) {
   if (!isOpen) return null;
 
   return (
@@ -14,13 +15,13 @@ function Modal({ isOpen, onClose, children }) {
         className="w-[80vw] h-[80vh] bg-zinc-900 rounded-2xl p-6 relative flex flex-col justify-start items-center"
       >
         <div className="w-full h-1/3 flex justify-center items-center md:w-[60%] md:h-2/3">
-          <img className="w-full h-full" src={coffee} alt="drink" />
+          <img className="w-full h-full" src={img} alt="drink" />
         </div>
         <div className="w-full h-1/4 mt-12 text-center font-bold text-2xl text-white">
-          Drinks name
+          {getDefaultNormalizer}
         </div>
         <div className="w-full h/1/3 text-center text-xl text-white">
-          this paragraph is a short explain about the drink
+          {description}
         </div>
         <button
           onClick={onClose}

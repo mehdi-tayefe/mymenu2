@@ -9,6 +9,7 @@ function Punch() {
     const fetched = useRef(false);
     const [loading, setLoading] = useState(true)
     const [isModalOn, setIsModalOn] = useState(false)
+    const [product, setProduct] = useState([])
 
 
 
@@ -18,9 +19,7 @@ function Punch() {
         const fetchProduct = async () => {
             try {
                 const result = await getProduct(id)
-                console.log(result);
-
-
+                setProduct(result)
             }
             catch (error) {
                 console.error("Error fetching products:", error);
@@ -63,7 +62,15 @@ function Punch() {
                             <CardsItem key={item.idDrink} id={item.idDrink} name={item.strDrink} img={item.strDrinkThumb} onClick={() => popupOn(item.idDrink)} />
                         ))
                     }
-                    <Modal isOpen={isModalOn} onClose={popupOff} />
+                    {isModalOn && product?.drinks && (
+                        <Modal
+                            isOpen={isModalOn}
+                            onClose={popupOff}
+                            name={product.drinks[0].strDrink}
+                            img={product.drinks[0].strDrinkThumb}
+                            description={product.drinks[0].strInstructions}
+                        />
+                    )}
                 </div>)
     )
 }

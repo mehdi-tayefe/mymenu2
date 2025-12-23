@@ -1,6 +1,5 @@
 import React from "react";
-import coffee from "../../assets/modal/coffee.jfif"
-import { getDefaultNormalizer } from "@testing-library/dom";
+
 
 function Modal({ isOpen, onClose, children, name ,description , img}) {
   if (!isOpen) return null;
@@ -18,7 +17,7 @@ function Modal({ isOpen, onClose, children, name ,description , img}) {
           <img className="w-full h-full" src={img} alt="drink" />
         </div>
         <div className="w-full h-1/4 mt-12 text-center font-bold text-2xl text-white">
-          {getDefaultNormalizer}
+          {name}
         </div>
         <div className="w-full h/1/3 text-center text-xl text-white">
           {description}

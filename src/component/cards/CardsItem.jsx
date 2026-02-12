@@ -13,9 +13,6 @@ function CardsItem({name , img , onClick}) {
         <h2>{name}</h2>
         <h2 className='text-left pl-10 self-start'>99$</h2>
       </div>
-      <div className='w-[10%] h-[90%] flex flex-col items-center justify-end'>
-        <AddCart />
-      </div>
     </div>
   )
 }
